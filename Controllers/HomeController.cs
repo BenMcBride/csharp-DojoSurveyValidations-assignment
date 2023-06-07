@@ -17,11 +17,14 @@ namespace DojoSurveyValidations.Controllers
     {
       if (ModelState.IsValid)
       {
-        ViewBag.Name = survey.Name;
-        ViewBag.Location = survey.Location;
-        ViewBag.Language = survey.Language;
-        ViewBag.Comment = survey.Comment;
-        return View();
+        Survey results = new Survey()
+        {
+          Name = survey.Name,
+          Location = survey.Location,
+          Language = survey.Language,
+          Comment = survey.Comment
+        };
+        return View(results);
       }
       else
       {
