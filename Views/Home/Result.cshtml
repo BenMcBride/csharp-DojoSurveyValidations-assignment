@@ -1,0 +1,38 @@
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<div class="container border rounded mt-3">
+  <h1>Submitted Info</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="row">Name:</th>
+        <td>@ViewBag.Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Dojo Location:</th>
+        <td>@ViewBag.Location</td>
+      </tr>
+      <tr>
+        <th scope="row">Favorite Language:</th>
+        <td>@ViewBag.Language</td>
+      </tr>
+      <tr>
+        <th scope="row">Comment (optional):</th>
+        @if (!string.IsNullOrEmpty(ViewBag.Comment))
+        {
+          <td>@ViewBag.Comment</td>
+        }
+        else
+        {
+          <td><em>No Comment</em></td>
+        }
+      </tr>
+    </tbody>
+  </table>
+  <a href="" class="btn btn-primary mb-3">Go Back</a>
+</div>
+
